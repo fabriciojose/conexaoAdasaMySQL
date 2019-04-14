@@ -52,8 +52,6 @@
 		   
 		</dependency>
 		
-
-        
         <!-- banco mysql -->
 		<dependency>
 		    <groupId>mysql</groupId>
@@ -61,10 +59,7 @@
 		    <version>8.0.15</version>
 		</dependency>
 		
-
-        
     </dependencies>
-    
     
     <build>
         <plugins>
@@ -93,6 +88,5 @@
 			
         </plugins>
     </build>
-  
   
 </project>

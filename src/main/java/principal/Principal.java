@@ -64,39 +64,37 @@ public class Principal extends Application {
 				    	
 				    	HibernateUtil.setUserPass("somde078_adasaMy", "12345");
 				    	
-				    	Endereco end = new Endereco ("Rua dos Brejos");
+				    	Demanda dem = new Demanda(tfDoc.getText());
+				    
+				    	//List<Demanda> list = new ArrayList<Demanda>();
+				    	
+				    	//list.add(dem);
+				    	
+				     	Endereco end = new Endereco ("Rua dos Brejos");
 				    	
 					    	Point point = new GeometryFactory().createPoint(new Coordinate(26, 62));
 						    	point.setSRID(4674);
 					     
 						    	end.setEndPoint(point);
-					        	
-					        	
-					        	EnderecoDao endDao = new EnderecoDao();
-					        	
-					        		endDao.salvarEndereco(end);
-;
-					        	/*
-				    	Demanda dem = new Demanda(tfDoc.getText());
-				    
+				        	
+				    	//end.setDemandas(list);
+				    	
 				    	dem.setDemEnderecoFK(end);
-				    	List<Demanda> list = new ArrayList<Demanda>();
 				    	
-				    	list.add(dem);
+				    	//EnderecoDao endDao = new EnderecoDao ();
 				    	
-				    	end.setDemandas(list);
-				    	
-				    	DemandaDao demDao = new DemandaDao();
+				    	//endDao.salvarEndereco(end);
 				    	
 				    	
-				    	demDao.mergeDemanda(dem);
-				    	*/
+				    	DemandaDao demDao =  new DemandaDao();
+				    	
+				    	demDao.salvarDemanda(dem);
 				    	
 				    	Alert alert;
 				    	alert = new Alert(AlertType.INFORMATION);
-				    		alert.setTitle("Information Dialog");
-				    			alert.setHeaderText("Look, an Information Dialog");
-				    				alert.setContentText("I have a great message for you!");
+				    		alert.setTitle("Informação");
+				    			alert.setHeaderText("Endereço salvo");
+				    				alert.setContentText("Parabéns");
 
 				    	alert.showAndWait();
 				    	

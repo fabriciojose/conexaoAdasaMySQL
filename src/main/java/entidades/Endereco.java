@@ -64,7 +64,7 @@ public class Endereco implements Serializable{
 	private Point endPoint;
 	
 	//-- Lista de enderecos vinculados --//
-	@OneToMany (mappedBy = "demEnderecoFK", cascade = CascadeType.MERGE,
+	@OneToMany (mappedBy = "demEnderecoFK", cascade = CascadeType.ALL,
 			 fetch = FetchType.EAGER, targetEntity = Demanda.class)
 	@Fetch(FetchMode.SUBSELECT) 
 	private List<Demanda> demandas = new ArrayList<Demanda>();

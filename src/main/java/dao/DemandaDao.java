@@ -10,6 +10,8 @@ import org.hibernate.criterion.Disjunction;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.sql.JoinType;
 
+import com.mysql.cj.xdevapi.SessionFactory;
+
 import entidades.Demanda;
 import entidades.HibernateUtil;
 
@@ -22,7 +24,7 @@ public void salvarDemanda (Demanda demanda) {
 		s.beginTransaction();
 		s.save(demanda);
 		s.getTransaction().commit();
-		s.flush();
+		//s.flush();  //retirou o erro javax.persistence.TransactionRequiredException: no transaction is in progress
 		s.close();
 		
 	}
